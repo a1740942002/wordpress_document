@@ -3,6 +3,7 @@ module.exports = {
   description: 'Just playing around',
   themeConfig: {
     nav: [
+      {text: '關於我', link: '/about/'},
       { text: '馬上開始', link: '/first/', target:'_self' },
       {
         text: '資源庫',
@@ -23,10 +24,12 @@ module.exports = {
           '/second/test1.md',
           '/second/test2.md'
         ]
-      }
+      },
+      '/third/third-new/'
     ],
     smoothScroll: true,
     activeHeaderLinks: true,
-    lastUpdated: '最後更新時間'
+    lastUpdated: '上次更新',
+    plugins: ['@vuepress/back-to-top']
   }
 }
