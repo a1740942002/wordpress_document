@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.8.0",
     "vuepress": "^1.8.0"
   },
   "scripts": {

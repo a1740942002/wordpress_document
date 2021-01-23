@@ -1,3 +1,5 @@
-# 我是第一篇文章
+# 主題
 
-一些文字
+dasfasfasfsa
+
+<img :src="$withBase('/hi/hero.png')" alt="foo">

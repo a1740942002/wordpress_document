@@ -14,16 +14,19 @@ module.exports = {
       }
     ],
     sidebar: [
-      '/',
       '/first/',
       {
-        title: 'second_title',
-        path: '/second/',
+        title: '開發',
+        sidebarDepth:2,
+        collapsable: false,
         children: [
           '/second/test1.md',
           '/second/test2.md'
         ]
       }
-    ]
+    ],
+    smoothScroll: true,
+    activeHeaderLinks: true,
+    lastUpdated: '最後更新時間'
   }
 }
