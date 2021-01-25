@@ -1,9 +1,9 @@
 ---
 home: true
-heroImage: /hi/hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
+heroImage: /profile.jpg
+heroText: Brian Lai
+tagline: 一人公司筆記
+actionText: 馬上學習 →
 actionLink: /guide/
 features:
 - title: 简洁至上
@@ -14,5 +14,3 @@ features:
   details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
 footer: Copyright © 2021-present Brian Lai
 ---
-
-# Hello World
