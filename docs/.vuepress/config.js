@@ -1,10 +1,15 @@
 module.exports = {
-  title: 'Hello VuePress',
+  title: 'Brian Lai',
   description: 'Just playing around',
   themeConfig: {
     nav: [
-      {text: '關於我', link: '/about/'},
-      { text: '馬上開始', link: '/first/', target:'_self' },
+      { text: '指南', link: '/guide/', target:'_self' },
+      { text: '一人公司', link: '/company-of-one/'},
+      { text: '架設網站', link: '/build-website/'},
+      { text: '投資理財', link: '/investment/'},
+      { text: '程式筆記', link: '/program-note/'},
+      { text: '關於我', link: '/about/'},
+      { text: '與我聯絡', link: '/contact/'},
       {
         text: '資源庫',
         ariaLabel: 'Language Menu',
@@ -14,19 +19,59 @@ module.exports = {
         ]
       }
     ],
-    sidebar: [
-      '/first/',
-      {
-        title: '開發',
-        sidebarDepth:2,
-        collapsable: false,
-        children: [
-          '/second/test1.md',
-          '/second/test2.md'
-        ]
-      },
-      '/third/third-new/'
-    ],
+    sidebar: {
+      
+      '/guide/': [
+        {
+          title: '指南',
+          collapsable: false,
+          children: [
+            '/guide/',
+            '/guide/company-of-one',
+            '/guide/build-website',
+            '/guide/investment'
+          ]
+        },
+      ],
+      '/company-of-one/': [
+        {
+          title: '一人公司',
+          collapsable: false,
+          children: [
+            '/company-of-one/'
+          ]
+        },
+      ],
+      '/build-website/': [
+        {
+          title: '架設網站',
+          collapsable: false,
+          children: [
+            '/build-website/'
+          ]
+        },
+      ],
+      '/investment/': [
+        {
+          title: '投資理財',
+          collapsable: false,
+          children: [
+            '/investment/'
+          ]
+        },
+      ],
+      '/program-note/': [
+        {
+          title: '程式筆記',
+          collapsable: false,
+          children: [
+            '/program-note/'
+          ]
+        },
+      ],
+    },
+    displayAllHeaders: true,
+    sidebarDepth: 2,
     smoothScroll: true,
     activeHeaderLinks: true,
     lastUpdated: '上次更新',
