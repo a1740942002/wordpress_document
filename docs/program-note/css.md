@@ -73,5 +73,32 @@ line-height: 40px
 ### 有顏色的 ICON
 
 :::tip CSS Sprites
-利用 CSS `background: url('image.png')` 背景圖片的原理，減少 http request 請求的次數。
+利用 `background: url('image.png')` 背景圖片的原理，減少 http request 請求的次數。
 :::
+
+### 三角形
+
+利用 border 其實是中空的特性，隱藏其它 3 邊 border，只利用一邊 border 並搭配 `transform` 達成。
+
+```sass
+.triangle:after
+  content:''
+  position: absolute
+  bottom: -8px
+  border-top: 5px solid transparent
+  border-bottom: 5px solid transparent
+  border-right: 5px solid transparent
+  border-left: 5px solid #4b5563
+  left: 12px
+  transform: rotate(90deg)
+  width: 0
+  height: 0
+```
+
+:::tip
+利用這個做法也能做出不同形狀！
+:::
+
+## 響應式設計
+
+使用 **ResponsivelyApp** 一次開 3 個畫面，超好用！！

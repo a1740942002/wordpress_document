@@ -32,3 +32,9 @@ $branding-color: #e85a5a
 .col-12
   +new-border(1px, solid, #ccc)
 ```
+
+### 引入其它 Sass
+
+```sass
+@import 'about.sass'
+```
