@@ -11,6 +11,8 @@
 * `git checkout "版本編號"` - 切換到舊的 commit 版本。
 * `.gitignore` - 排除放入 git commit 中的檔案或是資料夾名稱。
 * `git diff` - 看你在 commit 之前改過什麼東西。
+* `git rm -r --cached .` - 刪除不小心 Commit 的東西
+
 
 ### 使用案例
 
@@ -72,3 +74,4 @@ git push -u origin main
 
 * `git push -u origin "要上傳的 branch"` - 把最新的 commit 上傳上去
 * `git clone` - 從 Github 上複製專案下來
+
