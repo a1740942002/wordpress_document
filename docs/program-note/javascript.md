@@ -38,3 +38,5 @@ foo.doAnother(456);
 ```tip 提示
 可以把 Closure 應用在建立一個內部使用的 API。
 ```
+
+### this & Object Prototypes

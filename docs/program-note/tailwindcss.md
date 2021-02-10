@@ -61,3 +61,26 @@ npm run build
 
 
 ## Purge
+
+路徑依照自己的需求進行更改。
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  purge: {
+    enabled: true,
+    content: ['./src/**/*.html'],
+  },
+  // ...
+}
+```
+
+### build 起來
+
+```bash
+npm run build
+```
+
+:::tip 提示
+如果出現編譯錯誤，可以把 node_modules/.bin 資料夾刪除。
+:::
