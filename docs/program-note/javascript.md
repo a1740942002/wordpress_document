@@ -91,6 +91,10 @@ OOP ( 物件導向 ) 的核心觀念：
 
 ### 所以，new 到底是幹嘛用的？
 
+要了解 new 到底是幹嘛用的，讓我們先進一段範例：
+
+#### 範例一
+
 ```JavaScript
 // ## 實作一個 Number() 的機制看看！
 // Q. 如果我想要將 string 丟入 一個函式之中，並將其轉成 Number，該如何實作呢？
@@ -98,7 +102,7 @@ OOP ( 物件導向 ) 的核心觀念：
 function StringToNumber(string){
 
   number = parseInt(string)
-  this.myfav = number;
+  this.myBirth = 1106;
 
   return number;
 }
@@ -108,8 +112,54 @@ var a = StringToNumber('123');
 console.log(a) // 123，是一個數字
 
 // 如果有 new 這個關鍵字，則會被作為**建構子**。
-var b = new StringToNumber('1106');
-console.log(b); // StringToNumber {myfav: 1106}，是一個繼承 StringToNumber 特性的物件
+var b = new StringToNumber('123');
+console.log(b); // StringToNumber {myBirth: 1106}，是一個繼承 StringToNumber 特性的物件
+console.log(b.myBirth) // 1106
+```
+
+:::tip 提示
+如果函式遇到 new 這個關鍵字，就會被作為**建構子**使用，而非函式。
+:::
+
+了解了 new 的基本用法之後，接著讓我們看下一段：
+
+#### 範例二
+
+```JavaScript
+// ## 實作 new 關鍵字的機制看看！
+
+function StringToNumber(string){
+
+  number = parseInt(string)
+  this.myBirth = 1106;
+
+  return number;
+}
+
+// 所以，new 究竟做了什麼？
+
+function newStringToNumber(string){
+  // 1. 建立一個空的物件 obj {}
+  var obj = {};
+
+  // 2. 使用 call() 去綁定 this 為剛剛建立的 obj
+  StringToNumber.call(obj, string);
+  // call(要綁定的 this, arg1, arg2...)
+  // Function.prototype.call， call() 只能被函式所調用
+
+  // 3. 將空物件 obj.__proto__ 綁定 StringToNumber.prototype
+  obj.__proto__ = StringToNumber.prototype;
+
+  // 4. 回傳 obj
+  return obj;
+}
+
+var a = StringToNumber('123');
+console.log(a) // 123，是一個數字
+
+var b = newStringToNumber('123');
+console.log(b) // StringToNumber {myBirth: 1106}
+console.log(b.myBirth) // 1106
 ```
 
 ## You don't Know Js
