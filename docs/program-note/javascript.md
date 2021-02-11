@@ -32,20 +32,22 @@ console.log(Computer.prototype); // 是一個物件
 console.log(M1.year); // 是一個物件的 instance
 console.log(M1.__proto__); // 等同於 Computer.prototype
 console.log(M1);
+
+M1.turn();
 ```
 
-當我們呼叫 M1.turn() 時：
+當我們呼叫 `M1.turn()` 時：
 
-1. M1 這個物件，它身上有沒有 turn ?
-2. M1.__proto__ 有沒有 turn ? -> 有，那就使用。
-3. M1.__proto__.__proto__ 有沒有 turn ?
+1. `M1` 這個物件，它身上有沒有 turn ?
+2. `M1.__proto__` 有沒有 turn ? -> 有，那就使用。
+3. `M1.__proto__.__proto__` 有沒有 turn ?
 
 
-M1.__proto__ === Computer.prototype
-實例的 __proto__ 等同於 建構子/藍圖的 prototype ( 原型 )。
+`M1.__proto__` === `Computer.prototype`
+實例的 `__proto__` 等同於 建構子/藍圖的 prototype ( 原型 )。
 
-> prototype - 原型，只適用於 prototype ( 類似設計一個藍圖或是 API )
-> __proto__  - 繼承，只適用於 Instance ( ex. M1 )
+> `prototype` - 原型，只適用於 prototype ( 類似設計一個藍圖或是 API )
+> `__proto__`  - 繼承，只適用於 Instance ( ex. M1 )
 
 ### ES6 的做法
 
@@ -86,6 +88,29 @@ OOP ( 物件導向 ) 的核心觀念：
 > 將資料與行為整理在一起。
 
 所以透過 class 這個概念，我們可以將所有相關的資料與行為包在一起，達成 OOP。
+
+### 所以，new 到底是幹嘛用的？
+
+```JavaScript
+// ## 實作一個 Number() 的機制看看！
+// Q. 如果我想要將 string 丟入 一個函式之中，並將其轉成 Number，該如何實作呢？
+
+function StringToNumber(string){
+
+  number = parseInt(string)
+  this.myfav = number;
+
+  return number;
+}
+
+//  直接使用，會回傳你所填入的值，並轉成數字型態。
+var a = StringToNumber('123');
+console.log(a) // 123，是一個數字
+
+// 如果有 new 這個關鍵字，則會被作為**建構子**。
+var b = new StringToNumber('1106');
+console.log(b); // StringToNumber {myfav: 1106}，是一個繼承 StringToNumber 特性的物件
+```
 
 ## You don't Know Js
 
