@@ -3,15 +3,15 @@
 ## Git 基本指令
 
 * `git --version` - 查看 Git 版本
-* `git init` - 
-* `git status` - 
-* `git add "檔案名稱"` - 
-* `git commit -m "版本名稱"` - 
-* `git log` - 
+* `git init` -
+* `git status` -
+* `git add "檔案名稱"` -
+* `git commit -m "版本名稱"` -
+* `git log` -
 * `git checkout "版本編號"` - 切換到舊的 commit 版本。
 * `.gitignore` - 排除放入 git commit 中的檔案或是資料夾名稱。
 * `git diff` - 看你在 commit 之前改過什麼東西。
-* `git rm -r --cached .` - 刪除不小心 Commit 的東西
+* `git rm -r --cached "要移出的檔案"` - 刪除不小心 Commit 的東西
 
 
 ### 使用案例
@@ -35,7 +35,7 @@
 node_modules/
 ```
 
-##### `git add .` 
+##### `git add .`
 
 `git add .` 代表這個資料夾全部的檔案都要加進去版本控制，當然，除了剛剛放在 `.gitignore` 裡面的。
 
@@ -74,4 +74,3 @@ git push -u origin main
 
 * `git push -u origin "要上傳的 branch"` - 把最新的 commit 上傳上去
 * `git clone` - 從 Github 上複製專案下來
-
