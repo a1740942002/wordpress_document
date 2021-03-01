@@ -1,6 +1,28 @@
-# PHP
+# PHP & MySQL
 
 我是 PHP
+
+## PHP
+
+### PHP 超全域變數
+
+#### `$_GET`
+
+#### `$_POST`
+
+#### `$_SERVER`
+
+常常使用 `$_SERVER['PHP_SELF']` 作為自參照的表單 ( 自己傳給自己 )。
+
+```php
+<form enctype="multipart/form-data" method="POST" class="mb-4 text-gray-700 text-left" action="<?= $_SERVER['PHP_SELF']?>">
+```
+
+#### `$_FILES`
+
+:::tip 提示
+上傳檔案要加在 `<form enctype="multipart/form-data">`。
+:::
 
 ### PHP 內建函式
 
@@ -22,6 +44,8 @@ echo "<pre>" . print_r($array, true) . "</pre>";
 ### MySQL Query
 
 #### C
+
+記得變數要加 `''`！
 
 ```SQL
 INSERT INTO guitar_war(name, score, screenshot) VALUES('$name', '$score', '$screenshot')
